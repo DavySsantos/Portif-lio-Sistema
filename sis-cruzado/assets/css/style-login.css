@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.visible-none {
+    display: none;
+}
+
+.alerta {
+    position: absolute !important; 
+    top: 0; 
+    right: 0; 
+    margin: 20px;
+}
+
+body{
+    align-items: center;
+    background-color: #7095c0 !important;
+    display: flex; 
+    height: 100vh; 
+    justify-content: center;
+}
+
+.login-container{
+    display: flex; 
+    width: 900px;
+}
+
+.etiqueta{
+    color: white;
+}
+
+.login-img-box{
+    background-color: #687aff;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.login-img{
+    object-fit: contain;
+    width: 100%;
+}
+
+.login-box{
+    background-color: #5c7ea6; 
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex; 
+    flex-direction: column; 
+    padding: 50px;
+    width: 50%;
+}
+
+.login{
+    margin-bottom: 10px; 
+    color: #fff;
+}
+
+.login-user,
+.login-password{
+    background-color: #fff;
+    border: none; 
+    border-radius: 5px; 
+    outline: none;
+    padding: 6px;
+} 
+
+.etiqueta1 {
+    padding-top: 5px;
+    padding-bottom: 7px;
+    color: #fff;
+}
+
+.etiqueta2 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.login-password{
+    margin-top: 10px;
+}
+
+.login-btn{
+    background-color: #090684; 
+    border: none; 
+    border-radius: 5px; 
+    color: #fff;
+    cursor: pointer; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px; 
+    padding: 10px;
+}
+
+.checkbox{
+    margin: 10px 0 10px;
+    text-align: start;
+    color: #fff;
+    font-size: 10px;
+}
+
+.opnc {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    padding-top: 5px;
+}
+
+.senha-esquecida{
+    color: #fff;
+    margin: 10px 0 10px;
+    text-decoration: none;
+    /* text-align: end; */
+    padding-top: 5px;
+}
+
+.login-register{
+    color: #090684;
+    text-decoration: none;
+}
+
+.register-text{
+    color: white;
+    padding: 30px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.login-recovery-password:hover,
+.login-register:hover{
+    color: #4d61fc;
+}
+
+@media (max-width:980px) {
+    .login-container{
+        max-width: 500px;
+    }
+    
+    .login-img-box{
+        display: none;
+    }
+
+    .login-box{
+        border-bottom-left-radius: 5px; 
+        border-top-left-radius: 5px; 
+        width: 100%;
+    }
+
+    .senha-esquecida {
+        display: flex;
+    }
+
+    @media (max-width:400px) {
+        .login-container{
+            max-width: 300px;
+        }
+        
+        .login-img-box{
+            display: none;
+        }
+    
+        .login-box{
+            border-bottom-left-radius: 2px; 
+            border-top-left-radius: 2px; 
+            width: 100%;
+        }
+    
+        .senha-esquecida {
+            display: flex;
+        }
+    }
+}

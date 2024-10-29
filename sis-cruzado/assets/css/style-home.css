@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    width: 200px;
+    height: 100px;
+}
+
+.bar {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #192f60;
+}
+
+#sidebar.expand {
+    width: 200px;
+    min-width: 200px;
+}
+
+#alt-bnt {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+#alt-bnt i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #fff;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowarp;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15rem;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.user-wrapper img {
+    width: 40px;
+    height: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* left: 345px; */
+    top: 0;
+}
+
+header h2 {
+    color: #222;
+}
+
+.search-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper input {
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper img {
+    border-radius: 50%;
+    margin-right: 1rem;
+    height: 50px;
+    width: 50px;
+    background-color: #192f60;
+}
+
+
+.dropbtn {
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(188, 185, 185);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #0e2238;
+}
+
+.user-wrapper i {
+    padding-left: 10px;
+}
+
+.user-wrapper small {
+    display: inline-block;
+    color: gray;
+}
+
+.dashboard-name h4 {
+    color: gray;
+    font-size: .8rem;
+    padding-top: 5px;
+}
+
+.nome {
+    color: #192f60;
+}
+
+main {
+    margin-top: 20px;
+    padding: 1rem 1.5rem;
+    background: #f0f0f0;
+    min-height: 80%;
+}
+
+.cards {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset -2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.card-single {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 2px;
+}
+
+.user-input-box:nth-child(2n) {
+    justify-content: end;
+}
+
+.two {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.user-input-box label {
+    width: 95%;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.user-input-box input {
+    height: 40px;
+    width: 95%;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+.form-submit-bnt {
+    margin-top: 40px;
+}
+
+.form-submit-bnt input {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(209, 209, 209);
+    background: rgb(20, 1, 143);
+}
+
+.form-submit-bnt input:hover {
+    background: rgba(91, 56, 204, 0.7);
+    color: rgba(255, 255, 255);
+}
+
+
+.user-input-box select {
+    height: 40px;
+    width: 95%;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+/* .texto {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+} */
+
+/* .radio {
+    flex-wrap: wrap;
+    width: 48%;
+    padding-top: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+} */
+
+.visible-none {
+    display: none;
+}
+
+.alerta {
+    position: absolute !important; 
+    top: 0; 
+    right: 0; 
+    margin: 20px;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: auto;
+    height: 200px;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    /* background-color: #04AA6D; */
+    color: black;
+}
+
+.situacao1 {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.situacao2 {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.form-title {
+    font-size: 2rem;
+    padding-bottom: 6px;
+}
+
+.Novo {
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.rodape {
+    display: block;
+    align-items: end;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.Barra {
+    margin-top: 0px;
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.user-input-box:nth-child(2n) {
+    justify-content: end;
+}
+
+#user-input-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.user-input-box label {
+    width: 95%;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.user-input-box input {
+    height: 40px;
+    width: 95%;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+.form-submit-bnt {
+    margin-top: 40px;
+}
+
+.form-submit-bnt input {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(209, 209, 209);
+    background: rgb(20, 1, 143);
+}
+
+.form-submit-bnt input:hover {
+    background: rgba(91, 56, 204, 0.7);
+    color: rgba(255, 255, 255);
+}
+
+.user-input-box select {
+    height: 40px;
+    width: 95%;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+.texto {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid grey;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
+
+.radio {
+    /* flex-wrap: wrap; */
+    width: 48%;
+    padding-top: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.tit {
+    flex-wrap: wrap;
+    display: block;
+}
+
+.Salvar {
+    display: block;
+    justify-content: end;
+    align-items: end;
+    text-align: right;
+    padding: 3px;
+}
+
+.tab_dados{
+    padding: 10px; 
+    height: auto; 
+    width: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    header {
+        width: calc(100%);
+        left: 70px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-wrapper {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+
+    .form-title {
+        font-size: 1rem;
+    }
+
+    .form-submit-bnt input {
+        font-size: .5rem;
+        padding: 10px;
+    }
+
+    .user-input-box {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .user-input-box:nth-child(2n) {
+        justify-content: space-between;
+    }
+
+    .card-item {
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .card-item::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .search-wrapper {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .search-wrapper {
+        display: none;
+    }
+
+}
