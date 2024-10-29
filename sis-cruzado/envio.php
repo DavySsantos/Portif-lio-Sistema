@@ -16,7 +16,7 @@ if (isset($_POST['enviar'])) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'davy12318@gmail.com';
+        $mail->Username   = '';
         $mail->Password   = 'eknr gdyj ysys bthd';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
@@ -33,7 +33,7 @@ if (isset($_POST['enviar'])) {
             array_push($emails, $value->email);
         }
 
-        $mail->setFrom('davy12318@gmail.com', 'Mailer');
+        $mail->setFrom('', 'Mailer');
         $mail->addAddress($_POST['email']);
         $mail->addCC(implode(', ', $emails));
         $mail->isHTML(true);
